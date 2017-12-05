@@ -3,9 +3,15 @@
 import React from 'react';
 
 const Title = React.createClass({
+  getDefaultProps: function () {
+    return {
+      name: 'Desconhecido',
+      lastname: 'Sem sobrenome'
+    };
+  },
   render: function () {
     return (
-      <h1>Ola {this.props.name}!</h1>
+      <h1>Ola {this.props.name + ' ' + this.props.lastname}!</h1>
     );
   }
 });
