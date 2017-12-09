@@ -18,5 +18,10 @@
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
+  },
+  "semistandard": {
+    "globals": [
+      "alert"
+    ]
   }
 }
