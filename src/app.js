@@ -14,15 +14,7 @@ class App extends Component {
     return (
       <div>
         <form>
-          <select multiple value={['1', '3']} onChange={(e) => {
-            this.setState({
-              value: e.target.value
-            });
-          }}>
-            <option value='1'>Opção 1</option>
-            <option value='2'>Opção 2</option>
-            <option value='3'>Opção 3</option>
-          </select>
+          <textarea value='textarea value'/>
         </form>
       </div>
     );
