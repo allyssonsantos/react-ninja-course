@@ -23,10 +23,7 @@ class App extends Component {
             <input
               type='checkbox'
               value='my-checkbox'
-              checked={this.state.checked}
-              onChange={(e) => {
-                this.setState({ checked: !this.state.checked });
-              }} />
+              defaultChecked />
             Checkbox
           </label>
         </form>
