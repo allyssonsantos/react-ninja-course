@@ -1,15 +1,11 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
+const App = () => (
+  <div>
 
-
-  render () {
-    return (
-      <div>My app</div>
-    );
-  }
-}
+  </div>
+);
 
 export default App;
