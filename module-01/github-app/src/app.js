@@ -12,7 +12,7 @@ class App extends Component {
         photo: 'https://avatars1.githubusercontent.com/u/13424727?v=4',
         login: 'allyssonsantos',
         repos: 12,
-        followers: 10,
+        followers: 11,
         following: 10
       },
       repos: [{
