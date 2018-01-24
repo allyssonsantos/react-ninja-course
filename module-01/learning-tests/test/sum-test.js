@@ -2,5 +2,19 @@
 
 const sum = require('./sum');
 
-console.log(sum(1,2) === 3);
-console.log(sum(1,1) === 2);
+console.assert(
+  typeof sum === 'function',
+  'should sum be a function'
+);
+
+console.assert(
+  sum(1, 2) === 3,
+  'should sum(1, 2) return 3'
+);
+
+console.assert(
+  sum(2, 3) === 5,
+  'should sum(2, 3) return 5'
+);
+
+console.log('All tests passed!');
