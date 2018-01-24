@@ -33,16 +33,7 @@ class App extends Component {
           }
         });
 
-
         /*
-          userinfo: {
-              username: 'Allysson dos Santos',
-              photo: 'https://avatars1.githubusercontent.com/u/13424727?v=4',
-              login: 'allyssonsantos',
-              repos: 12,
-              followers: 11,
-              following: 10
-            },
             repos: [{
               name: 'Repo',
               link: '#'
@@ -51,7 +42,6 @@ class App extends Component {
               name: 'Repo',
               link: '#'
             }]
-          };
         */
       });
     }
@@ -63,6 +53,8 @@ class App extends Component {
       repos={this.state.repos}
       starred={this.state.starred}
       handleSearch={(e) => this.handleSearch(e)}
+      getRepos={() => console.log('get repos')}
+      getStarred={() => console.log('get starred')}
     />;
   }
 }
