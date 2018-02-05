@@ -1,7 +1,7 @@
 'use strict';
 
 import { expect } from 'chai';
-import reduce from './reduce-recursive';
+import reduce from './main-reduce-recursive';
 
 it('reduce should be a function', () => {
   expect(reduce).to.be.a('function');
