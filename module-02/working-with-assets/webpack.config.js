@@ -17,13 +17,16 @@ module.exports = validate({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name]-[hash].js',
     publicPath: ''
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlPlugin(),
+    new HtmlPlugin({
+      title: 'GitHub app',
+      template: path.join(__dirname, 'src', 'html', 'template.html'),
+    }),
   ],
 
   module: {
