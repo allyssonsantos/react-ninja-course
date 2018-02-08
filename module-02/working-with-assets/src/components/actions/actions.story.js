@@ -6,7 +6,7 @@ import Actions from './index';
 
 const stories = storiesOf('Actions', module);
 
-stories.add('first story', () => (
+stories.add('Actions component', () => (
   <Actions
     getRepos={action('Get Repos')}
     getStarred={action('Get Starred')}
