@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <style>
+    <%= compilation.assets['crp.css'].source() %>
+  </style>
 </head>
 <body>
   <div data-js="app"></div>
+
+  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
+    <script async src="<%= jsFile %>"></script>
+  <% }) %>
+
+  <% htmlWebpackPlugin.files.css.forEach((cssFile) => { %>
+    <% if (cssFile !== 'crp.css') { %>
+      <link rel="stylesheet" href="<%= cssFile %>">
+    <% } %>
+  <% }) %>
 </body>
 </html>

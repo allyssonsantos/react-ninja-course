@@ -9,22 +9,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.app {
-  float: left;
-  padding: 30px;
-  width: 100%;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.actions,
-.repos,
-.starred {
-  float: left;
-  width: 100%;
-}
