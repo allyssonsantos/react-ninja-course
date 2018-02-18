@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
+import './repos.css';
 
 const Repos = ({ className, title, repos }) => (
   <div className={className}>
@@ -16,7 +17,8 @@ const Repos = ({ className, title, repos }) => (
 );
 
 Repos.defaultProps = {
-  className: ''
+  className: '',
+  repos: []
 };
 
 Repos.propTypes = {
