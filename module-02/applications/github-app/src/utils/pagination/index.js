@@ -6,7 +6,6 @@ const centerRule = ({ total, activePage }) => (
     ? activePage - 2 : activePage - 1
 );
 
-
 const isNumber = (value) => typeof value === 'number';
 
 const pagination = ({ total = 1, activePage = 1 } = {}) => {
@@ -43,7 +42,7 @@ const pagination = ({ total = 1, activePage = 1 } = {}) => {
   }
 
   let penultimatePage = pages[pages.length - 2];
-  let lastPage = pages[pages.length -1];
+  let lastPage = pages[pages.length - 1];
 
   if (penultimatePage === (lastPage - 2)) {
     pages = [
@@ -69,14 +68,13 @@ const pagination = ({ total = 1, activePage = 1 } = {}) => {
 
   if (penultimatePage < (lastPage - 2)) {
     pages = [
-      ...pages.slice(0, - 1),
+      ...pages.slice(0, -1),
       '...',
       lastPage
     ];
   }
 
   return pages;
-
 };
 
 export default pagination;

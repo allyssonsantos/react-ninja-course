@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const webpackConfig = require('@kadira/storybook/dist/server/config/defaults/webpack.config.js');
 
 module.exports = function(config, env) {
@@ -9,6 +10,12 @@ module.exports = function(config, env) {
     exclude: /node_modules/,
     loader: 'semistandard-loader'
   });
+
+  newConfig.resolve = {
+    alias: {
+      utils: path.join(__dirname, '..', 'src', 'utils')
+    }
+  };
 
   return newConfig;
 };
