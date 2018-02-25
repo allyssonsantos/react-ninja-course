@@ -2,8 +2,9 @@
 
 import React from 'react';
 
+const Dots = ({ className }) => <span className={className}>...</span>;
+
 const Page = ({ page, pageLink, onClick }) => {
-  const Dots = () => <span>...</span>;
   const Component = page === '...' ? Dots : 'a';
   const handleClick = !onClick ? null : (e) => {
     e.preventDefault();
@@ -11,7 +12,7 @@ const Page = ({ page, pageLink, onClick }) => {
   };
 
   return (
-    <Component href={pageLink} onClick={handleClick}>
+    <Component href={pageLink} onClick={handleClick} className='pagination-link'>
       {page}
     </Component>
   );
