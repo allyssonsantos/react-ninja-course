@@ -3,15 +3,15 @@
 import React from 'react';
 
 const Page = ({ page, pageLink, onClick }) => {
-  const Component = page === '...' ? 'span' : 'a';
-  const href = page === '...' ? null : pageLink;
+  const Dots = () => <span>...</span>;
+  const Component = page === '...' ? Dots : 'a';
   const handleClick = !onClick ? null : (e) => {
     e.preventDefault();
     onClick(page);
   };
 
   return (
-    <Component href={href} onClick={handleClick}>
+    <Component href={pageLink} onClick={handleClick}>
       {page}
     </Component>
   );
