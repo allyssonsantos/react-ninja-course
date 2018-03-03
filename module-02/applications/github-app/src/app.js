@@ -4,13 +4,18 @@ import React, { Component } from 'react';
 import AppContent from 'components/app-content';
 import ajax from '@fdaciuk/ajax';
 
+const initialReposState = {
+  repos: [],
+  pagination: {}
+};
+
 class App extends Component {
   constructor () {
     super();
     this.state = {
       userinfo: null,
-      repos: [],
-      starred: [],
+      repos: initialReposState,
+      starred: initialReposState,
       isFetching: false
     };
 
@@ -42,8 +47,8 @@ class App extends Component {
             followers: result.followers,
             following: result.following
           },
-          repos: [],
-          starred: []
+          repos: initialReposState,
+          starred: initialReposState
         });
       })
       .always(() => this.setState({ isFetching: false }));
@@ -52,15 +57,17 @@ class App extends Component {
 
   getRepos (type, page) {
     return (e) => {
-      console.log('segunda função', type, page);
       const username = this.state.userinfo.login;
       ajax().get(this.getGitHubApiUrl(username, type, page))
         .then((result) => {
           this.setState({
-            [type]: result.map((repo) => ({
-              name: repo.name,
-              link: repo.html_url
-            }))
+            [type]: {
+              repos: result.map((repo) => ({
+                name: repo.name,
+                link: repo.html_url
+              })),
+              pagination: this.state[type].pagination
+            }
           });
         });
     };

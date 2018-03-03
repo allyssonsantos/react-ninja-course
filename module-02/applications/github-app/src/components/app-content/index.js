@@ -22,7 +22,7 @@ const AppContent = ({
     {!!userinfo && <UserInfo userinfo={userinfo} />}
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
-    {!!repos.length &&
+    {!!repos.repos.length &&
       <Repos
         className='repos'
         title='Repositórios'
@@ -31,7 +31,7 @@ const AppContent = ({
       />
     }
 
-    {!!starred.length &&
+    {!!starred.repos.length &&
       <Repos
         className='starred'
         title='Favoritos'
@@ -44,8 +44,8 @@ const AppContent = ({
 
 AppContent.propTypes = {
   userinfo: PropTypes.object,
-  repos: PropTypes.array.isRequired,
-  starred: PropTypes.array.isRequired,
+  repos: PropTypes.object.isRequired,
+  starred: PropTypes.object.isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleSearch: PropTypes.func.isRequired,
   handlePagination: PropTypes.func.isRequired,
