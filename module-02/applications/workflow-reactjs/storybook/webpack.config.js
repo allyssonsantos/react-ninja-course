@@ -5,8 +5,7 @@ const webpackConfig = require('@kadira/storybook/dist/server/config/defaults/web
 
 module.exports = function (config, env) {
   const newConfig = webpackConfig(config, env);
-  newConfig.module.preLoaders = (newConfig.module.preLoaders || []).concat(common.standardPreLoader);
-
+  newConfig.module.rules = (newConfig.module.rules || []).concat(common.standardPreLoader);
   newConfig.resolve = common.resolve;
 
   return newConfig;

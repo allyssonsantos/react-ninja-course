@@ -34,7 +34,7 @@ module.exports = {
       common.standardPreLoader,
       common.jsLoader,
       Object.assign({}, common.cssLoader, {
-        use: ExtractTextPlugin.extract.apply({
+        use: ExtractTextPlugin.extract({
           fallback: common.cssLoader.use[0],
           use: common.cssLoader.use.slice(1)
         })
