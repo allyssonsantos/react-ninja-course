@@ -11,12 +11,16 @@ const add = (args) => {
 }
 
 const addDev = (args) => {
-  return add(['dev'].concat(args));
+  return add(['--dev'].concat(args));
 }
 
 add(dependencies).on('close', () => {
   addDev(devDependencies.concat(
     'react-hot-loader@3.0.0-beta.6',
-    'webpack@2.2.1'
+    'webpack@2.2.1',
+    "extract-text-webpack-plugin@beta",
+    "webpack-dashboard@0.3.0",
+    "webpack-dev-server@2.3.0"
+  ]
   )).on('close', (code) => process.exit(code));
 });
