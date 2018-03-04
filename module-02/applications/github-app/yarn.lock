@@ -16,10 +16,6 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@fdaciuk/ajax@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@fdaciuk/ajax/-/ajax-2.3.0.tgz#de1780cdaffa9733b845403de7035ae4961289d7"
-
 "@kadira/react-split-pane@^1.4.0":
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/@kadira/react-split-pane/-/react-split-pane-1.4.7.tgz#6d753d4a9fe62fe82056e323a6bcef7f026972b5"

@@ -36,7 +36,6 @@
     "webpack-validator": "^3.0.0"
   },
   "dependencies": {
-    "@fdaciuk/ajax": "^2.3.0",
     "react": "15.1.0",
     "react-dom": "15.1.0"
   },
@@ -45,8 +44,8 @@
       "alert"
     ],
     "ignore": [
-        "dist",
-        "node_modules"
+      "dist",
+      "node_modules"
     ]
   }
 }

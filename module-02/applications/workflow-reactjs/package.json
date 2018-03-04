@@ -11,31 +11,31 @@
     "build-storybook": "build-storybook -c storybook"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook": "^2.35.3",
     "babel-core": "^6.26.0",
-    "babel-jest": "^22.2.2",
-    "babel-loader": "^6.4.1",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.1.2",
     "cross-env": "^5.1.3",
-    "css-loader": "^0.28.9",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.30.1",
-    "jest-cli": "^22.3.0",
-    "react-hot-loader": "^3.0.0-beta.2",
-    "semistandard": "^11.0.0",
-    "semistandard-loader": "0.0.4",
-    "style-loader": "^0.20.1",
-    "webpack": "^1.15.0",
-    "webpack-dashboard": "^1.1.1",
-    "webpack-dev-server": "^1.16.5"
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "beta",
+    "html-webpack-plugin": "2.28.0",
+    "jest-cli": "^22.4.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "semistandard": "^12.0.1",
+    "semistandard-loader": "^0.0.4",
+    "style-loader": "^0.20.2",
+    "webpack": "2.2.1",
+    "webpack-dashboard": "0.3.0",
+    "webpack-dev-server": "2.3.0"
   },
   "dependencies": {
-    "@fdaciuk/ajax": "^2.3.0",
-    "react": "15.1.0",
-    "react-dom": "15.1.0"
+    "dev": "^0.1.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "semistandard": {
     "globals": [
