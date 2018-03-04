@@ -12,7 +12,7 @@ module.exports = {
 
   htmlPluginConfig: (template) => ({
     title: 'GitHub app',
-    template: join(__dirname, '..', 'src', 'html', template),
+    template: join(__dirname, '..', 'src', 'html', template)
   }),
 
   standardPreLoader: {
