@@ -14,10 +14,10 @@
     "@kadira/storybook": "^2.35.3",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.1",
-    "babel-loader": "^7.1.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^5.1.3",
@@ -35,8 +35,8 @@
   },
   "dependencies": {
     "dev": "^0.1.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "snazzy": "^7.1.1"
   },
   "semistandard": {
