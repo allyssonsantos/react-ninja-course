@@ -1,18 +1,36 @@
 'use strict';
 
 import React, { Component } from 'react';
-import AppContent from 'components/app-content';
+import Title from './components/title';
 
 class App extends Component {
   constructor () {
     super();
-    this.state = {};
+    this.state = {
+      title: '...'
+    };
+  }
+
+  getTitle () {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('My app with async / await!');
+      }, 2000);
+    });
+  }
+
+  async componentDidMount () {
+    this.setState({
+      title: await this.getTitle()
+    });
   }
 
   render () {
-    return <AppContent
-      {...this.state}
-    />;
+    return (
+      <div>
+        <Title>{this.state.title}</Title>
+      </div>
+    );
   }
 }
 
