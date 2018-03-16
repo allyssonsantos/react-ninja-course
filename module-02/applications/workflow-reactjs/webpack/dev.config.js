@@ -24,7 +24,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
 
-    new HtmlPlugin(common.htmlPluginConfig('template-dev.html'))
+    new HtmlPlugin(common.htmlPluginConfig)
   ],
 
   module: {

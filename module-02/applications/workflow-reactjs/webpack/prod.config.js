@@ -1,6 +1,5 @@
 'use strict';
 
-const { join } = require('path');
 const webpack = require('webpack');
 const common = require('./common');
 
@@ -14,7 +13,7 @@ module.exports = {
 
   plugins: [
     new CleanPlugin(['dist'], {
-      root: join(__dirname, '..'),
+      root: common.paths.root
     }),
 
     new ExtractTextPlugin({
@@ -27,7 +26,7 @@ module.exports = {
       }
     }),
 
-    new HtmlPlugin(common.htmlPluginConfig('template-dev.html')),
+    new HtmlPlugin(common.htmlPluginConfig),
 
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true

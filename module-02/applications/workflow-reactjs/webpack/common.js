@@ -2,46 +2,54 @@
 
 const { join } = require('path');
 
+const paths = {
+  root: join(__dirname, '..'),
+  src: join(__dirname, '..', 'src'),
+  dist: join(__dirname, '..', 'dist')
+};
+
 module.exports = {
-  entry: join(__dirname, '..', 'src', 'index'),
+  paths,
+
+  entry: join(paths.src, 'index'),
 
   output: {
-    path: join(__dirname, '..', 'dist'),
+    path: paths.dist,
     filename: '[name]-[hash].js'
   },
 
-  htmlPluginConfig: (template) => ({
-    title: 'GitHub app',
-    template: join(__dirname, '..', 'src', 'html', template)
-  }),
+  htmlPluginConfig: {
+    title: 'My app',
+    template: join(paths.src, 'html', 'template.html')
+  },
 
   standardPreLoader: {
     test: /\.js$/,
     enforce: 'pre',
     exclude: /node_modules/,
-    include: join(__dirname, '..', 'src'),
+    include: paths.src,
     use: 'semistandard-loader'
   },
 
   jsLoader: {
     test: /\.js$/,
     exclude: /node_modules/,
-    include: join(__dirname, '..', 'src'),
+    include: paths.src,
     use: 'babel-loader'
   },
 
   cssLoader: {
     test: /\.css$/,
     exclude: /node_modules/,
-    include: join(__dirname, '..', 'src'),
+    include: paths.src,
     use: ['style-loader', 'css-loader']
   },
 
   resolve: {
     alias: {
-      src: join(__dirname, '..', 'src'),
-      components: join(__dirname, '..', 'src', 'components'),
-      utils: join(__dirname, '..', 'src', 'utils')
+      src: paths.src,
+      components: join(paths.src, 'components'),
+      utils: join(paths.src, 'utils')
     }
   }
 };
