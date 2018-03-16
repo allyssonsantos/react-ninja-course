@@ -8,10 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: {
-    app: common.entry,
-    vendor: ['react', 'react-dom']
-  },
+  entry: common.entry,
   output: common.output,
 
   plugins: [
@@ -29,7 +26,12 @@ module.exports = {
       }
     }),
 
-    new webpack.optimize.CommonsChunkPlugin('vendor'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'react-build',
+      minChunks: ({ resource }) => (
+        /node_modules\/react(\-dom)?/.test(resource)
+      )
+    }),
 
     new HtmlPlugin(common.htmlPluginConfig),
 
