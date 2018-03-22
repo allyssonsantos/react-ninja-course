@@ -28,7 +28,12 @@ module.exports = {
     enforce: 'pre',
     exclude: /node_modules/,
     include: paths.src,
-    use: 'semistandard-loader'
+    use: {
+      loader: 'semistandard-loader',
+      options: {
+        parser: 'babel-eslint'
+      }
+    }
   },
 
   jsLoader: {
