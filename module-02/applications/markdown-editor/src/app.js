@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 
+import 'src/css/style.css';
+
 class App extends Component {
   constructor () {
     super();
