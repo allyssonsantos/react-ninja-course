@@ -11,9 +11,9 @@ import('highlight.js').then((hljs) => {
   marked.setOptions({
     highlight: (code, lang) => {
       if (lang && hljs.getLanguage(lang)) {
-        return hljs.highlight(lang, code).value
+        return hljs.highlight(lang, code).value;
       }
-      hljs.highlightAuto(code).value
+      hljs.highlightAuto(code).value;
     }
   });
 });
