@@ -35,17 +35,13 @@ body {
   width: 100%;
 }
 
-.editor-header .save {
+.editor-header .save-message {
   border: 0;
   background-color: green;
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0 20px;
-}
-
-.editor-header .save:hover {
-  background-color: darkgreen;
+  padding: 12px;
 }
 
 textarea,

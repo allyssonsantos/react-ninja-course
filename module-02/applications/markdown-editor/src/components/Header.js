@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const Header = ({ handleSave }) => (
+const Header = ({ isSaving }) => (
   <header className='editor-header'>
-    <button className='save' onClick={handleSave}>Salvar</button>
+    <span className='save-message'>{isSaving ? 'Salvando...' : 'Salvo!'}</span>
   </header>
 );
+
+Header.propTypes = {
+  isSaving: PropTypes.bool.isRequired
+};
 
 export default Header;
