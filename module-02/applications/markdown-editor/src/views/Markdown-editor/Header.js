@@ -2,12 +2,11 @@
 
 import React, { PropTypes } from 'react';
 import Button from 'components/Button';
+import SaveMessage from 'components/Save-message';
 
 const Header = ({ isSaving, handleRemove, handleCreate }) => (
   <header className='editor-header'>
-    {isSaving !== null && (
-      <span className='save-message'>{isSaving ? 'Salvando...' : 'Salvo!'}</span>
-    )}
+    <SaveMessage isSaving={isSaving} />
 
     <Button
       onClick={handleCreate}
@@ -22,7 +21,6 @@ const Header = ({ isSaving, handleRemove, handleCreate }) => (
 );
 
 Header.propTypes = {
-  isSaving: PropTypes.bool,
   handleRemove: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired
 };

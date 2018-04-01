@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 
-import MarkdownEditor from 'components/Markdown-editor';
+import MarkdownEditor from 'views/Markdown-editor';
 
 import 'src/css/style.css';
 
