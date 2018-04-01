@@ -1,8 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
+import { v4 } from 'node-uuid';
 import marked from 'marked';
-
 import MarkdownEditor from 'views/Markdown-editor';
 
 import 'src/css/style.css';
@@ -21,8 +21,14 @@ import('highlight.js').then((hljs) => {
 class App extends Component {
   constructor () {
     super();
-    this.state = {
+
+    this.clearState = () => ({
       value: '',
+      id: v4()
+    });
+
+    this.state = {
+      ...this.clearState(),
       isSaving: null
     };
 
@@ -35,19 +41,23 @@ class App extends Component {
 
     this.handleSave = () => {
       if (this.state.isSaving) {
-        localStorage.setItem('md', this.state.value);
+        localStorage.setItem(this.state.id, this.state.value);
         this.setState({ isSaving: false });
       }
     };
 
+    this.createNew = () => {
+      this.setState(this.clearState());
+      this.textarea.focus();
+    };
+
     this.handleRemove = () => {
-      localStorage.removeItem('md');
-      this.setState({ value: '' });
+      localStorage.removeItem(this.state.id);
+      this.createNew();
     };
 
     this.handleCreate = () => {
-      this.setState({ value: '' });
-      this.textarea.focus();
+      this.createNew();
     };
 
     this.getMarkup = () => ({
@@ -57,11 +67,6 @@ class App extends Component {
     this.textareaRef = (node) => {
       this.textarea = node;
     };
-  }
-
-  componentDidMount () {
-    const value = localStorage.getItem('md');
-    this.setState({ value: value || '' });
   }
 
   componentDidUpdate () {
