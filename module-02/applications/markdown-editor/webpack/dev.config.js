@@ -29,6 +29,7 @@ module.exports = {
   ],
 
   module: {
+    noParse: common.module.noParse,
     rules: [
       common.standardPreLoader,
       common.jsLoader,

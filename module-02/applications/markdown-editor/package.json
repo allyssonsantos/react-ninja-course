@@ -53,6 +53,7 @@
     "preact-compat": "^3.18.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "strclass": "^2.0.9",
     "webpack-bundle-analyzer": "^2.11.1"
   },
   "semistandard": {
