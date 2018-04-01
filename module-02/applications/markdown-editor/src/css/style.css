@@ -36,17 +36,28 @@ body {
 }
 
 .editor-header .save-message {
-  border: 0;
-  background-color: green;
   color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
   padding: 12px;
+}
+
+.button-remove {
+  border: 0;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0 20px;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+}
+
+.button-remove:hover {
+  background-color: darkred;
 }
 
 textarea,
 .view {
-  height: 100%;
+  height: calc(100% - 40px);
   min-width: 50%;
   max-width: 50%;
 }
@@ -65,4 +76,5 @@ textarea:focus {
   background: #333;
   color: #fff;
   padding: 10px;
+  overflow: auto;
 }
