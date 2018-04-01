@@ -5,21 +5,19 @@ import Header from './Header';
 
 const MarkdownEditor = ({
   value,
-  isSaving,
   handleChange,
-  handleRemove,
-  getMarkup
+  getMarkup,
+  textareaRef,
+  ...props
 }) => (
   <section className='editor'>
-    <Header
-      isSaving={isSaving}
-      handleRemove={handleRemove}
-    />
+    <Header {...props} />
 
     <textarea
       value={value}
       onChange={handleChange}
       autoFocus
+      ref={textareaRef}
     />
     <article
       className='view'
@@ -31,7 +29,8 @@ const MarkdownEditor = ({
 MarkdownEditor.propTypes = {
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
-  getMarkup: PropTypes.func.isRequired
+  getMarkup: PropTypes.func.isRequired,
+  textareaRef: PropTypes.func.isRequired
 };
 
 export default MarkdownEditor;
