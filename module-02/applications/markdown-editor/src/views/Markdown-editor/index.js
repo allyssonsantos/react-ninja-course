@@ -10,12 +10,14 @@ const MarkdownEditor = ({
   handleChange,
   getMarkup,
   textareaRef,
+  files,
+  handleOpenFile,
   ...props
 }) => (
   <section className='editor'>
     <Header {...props} />
 
-    <Files />
+    <Files files={files} handleOpenFile={handleOpenFile} />
 
     <textarea
       value={value}
