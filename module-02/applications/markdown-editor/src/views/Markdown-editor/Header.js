@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 import SaveMessage from 'components/Save-message';
 
-const Header = ({ isSaving, handleRemove, handleCreate }) => (
+const Header = ({ title, isSaving, handleRemove, handleCreate, handleChange }) => (
   <header className='editor-header'>
     <SaveMessage isSaving={isSaving} />
+    <input type='text' value={title} onChange={handleChange('title')} placeholder='Sem título' />
 
     <Button
       onClick={handleCreate}
@@ -22,6 +23,7 @@ const Header = ({ isSaving, handleRemove, handleCreate }) => (
 );
 
 Header.propTypes = {
+  title: PropTypes.string.isRequired,
   handleRemove: PropTypes.func.isRequired,
   handleCreate: PropTypes.func.isRequired
 };
