@@ -8,12 +8,11 @@
     "lint:fix": "semistandard --fix",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
     "build:analyzer": "cross-env ANALYZER=true yarn build",
-    "storybook": "start-storybook -p 6006 -c storybook",
-    "build-storybook": "cross-env NODE_ENV=production BABEL_ENV=production build-storybook -c storybook",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "update-packages": "node ./scripts/update.js"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.3",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^6.2.10",
@@ -40,7 +39,11 @@
     "url-loader": "^1.0.1",
     "webpack": "2.2.1",
     "webpack-dashboard": "0.3.0",
-    "webpack-dev-server": "2.3.0"
+    "webpack-dev-server": "2.3.0",
+    "@storybook/react": "^3.4.0",
+    "@storybook/addon-actions": "^3.4.0",
+    "@storybook/addon-links": "^3.4.0",
+    "@storybook/addons": "^3.4.0"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
