@@ -25,6 +25,8 @@
     "clean-webpack-plugin": "^0.1.19",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "2.28.0",
@@ -59,7 +61,9 @@
   "semistandard": {
     "globals": [
       "alert",
-      "localStorage"
+      "localStorage",
+      "it",
+      "expect"
     ],
     "ignore": [
       "dist",
