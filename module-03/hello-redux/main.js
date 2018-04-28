@@ -11,5 +11,20 @@ const counter = (state = 0, action) => {
 const { createStore } = Redux;
 const store = createStore(counter);
 
-store.dispatch({ type: 'INCREMENT' });
-console.log(store.getState());
+const $counter = document.querySelector('[data-js="counter"]');
+const $decrement = document.querySelector('[data-js="decrement"]');
+const $increment = document.querySelector('[data-js="increment"]');
+
+$decrement.addEventListener('click', decrement);
+$increment.addEventListener('click', increment);
+
+function decrement() {
+  store.dispatch({ type: 'DECREMENT' });
+}
+
+function increment() {
+  store.dispatch({ type: 'INCREMENT' });
+}
+
+store.subscribe(() => $counter.textContent = store.getState());
+
