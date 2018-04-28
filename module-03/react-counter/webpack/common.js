@@ -36,7 +36,7 @@ module.exports = {
   },
 
   jsLoader: {
-    test: /\.js$/,
+    test: /\.jsx?$/,
     include: paths.src,
     use: {
       loader: 'babel-loader',
@@ -90,6 +90,7 @@ module.exports = {
       src: paths.src,
       components: join(paths.src, 'components'),
       utils: join(paths.src, 'utils')
-    }
+    },
+    extensions: ['.js', '.jsx']
   }
 };
