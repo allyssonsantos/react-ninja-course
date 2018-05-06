@@ -3,10 +3,11 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
 import counters, {
+  initialState,
   ADD_COUNTER,
   REMOVE_COUNTER,
   INCREMENT,
-  DECREMENT
+  DECREMENT,
 } from './index';
 
 it('counters should be a function', () => {
@@ -87,7 +88,7 @@ it('should return same state if action is unkown', () => {
 it('should return initial state if last state is undefined', () => {
   const before = undefined;
   const action = deepFreeze({});
-  const after = [];
+  const after = initialState;
 
   expect(counters(before, action)).to.be.eql(after);
 });
