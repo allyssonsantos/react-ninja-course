@@ -4,16 +4,9 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './app';
+import reducer from 'reducers/counters';
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT': return state + 1;
-    case 'DECREMENT': return state - 1;
-    default: return state;
-  }
-};
-
-const store = createStore(counter);
+const store = createStore(reducer);
 
 const renderApp = (NextApp) => {
   render(

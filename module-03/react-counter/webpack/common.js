@@ -74,22 +74,23 @@ module.exports = {
   },
 
   urlLoader: {
-     test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
-     include: paths.src,
-     use: {
-       loader: 'url-loader',
-       query: {
-         limit: 10000,
-         name: 'media/[name].[hash:8].[ext]'
-       }
-     },
+    test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+    include: paths.src,
+    use: {
+      loader: 'url-loader',
+      query: {
+        limit: 10000,
+        name: 'media/[name].[hash:8].[ext]'
+      },
+    },
   },
 
   resolve: {
     alias: {
       src: paths.src,
       components: join(paths.src, 'components'),
-      utils: join(paths.src, 'utils')
+      utils: join(paths.src, 'utils'),
+      reducers: join(paths.src, 'redux-flow', 'reducers'),
     },
     extensions: ['.js', '.jsx']
   }
