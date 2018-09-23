@@ -1,0 +1,16 @@
+{
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": 1,
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "global-require": 0,
+        "react/jsx-filename-extension": 0,
+        "react/no-unused-state": 0
+    },
+    "extends": "airbnb",
+    "globals": {
+        "it": true,
+        "expect": true,
+        "document": true
+    }
+}

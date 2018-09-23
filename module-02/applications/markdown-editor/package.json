@@ -1,0 +1,81 @@
+{
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "webpack-dashboard -- node server.js",
+    "test": "jest --coverage",
+    "test:watch": "yarn test -- --watch",
+    "lint": "semistandard --parser babel-eslint --verbose | snazzy",
+    "lint:fix": "semistandard --fix",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
+    "build:analyzer": "cross-env ANALYZER=true yarn build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "update-packages": "node ./scripts/update.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "2.28.0",
+    "prop-types": "^15.6.1",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-test-renderer": "^16.3.1",
+    "semistandard": "^12.0.1",
+    "semistandard-loader": "^0.0.4",
+    "snazzy": "^6.0.0",
+    "style-loader": "^0.20.2",
+    "url-loader": "^1.0.1",
+    "webpack": "2.2.1",
+    "webpack-dashboard": "0.3.0",
+    "webpack-dev-server": "2.3.0",
+    "@storybook/react": "^3.4.0",
+    "@storybook/addon-actions": "^3.4.0",
+    "@storybook/addon-links": "^3.4.0",
+    "@storybook/addons": "^3.4.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "highlight.js": "^9.12.0",
+    "jest": "^22.4.3",
+    "marked": "^0.3.19",
+    "node-uuid": "^1.4.8",
+    "normalize.css": "^8.0.0",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "strclass": "^2.0.9",
+    "webpack-bundle-analyzer": "^2.11.1"
+  },
+  "semistandard": {
+    "globals": [
+      "alert",
+      "localStorage",
+      "it",
+      "expect"
+    ],
+    "ignore": [
+      "dist",
+      "node_modules"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.css$": "<rootDir>/config/CSSStub.js"
+    }
+  }
+}

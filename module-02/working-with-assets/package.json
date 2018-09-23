@@ -1,0 +1,38 @@
+{
+  "scripts": {
+    "start": "webpack-dashboard -- node server.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
+    "storybook": "start-storybook -p 6006 -c storybook",
+    "build-storybook": "build-storybook -c storybook"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.30.1",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "semistandard": "^11.0.0",
+    "semistandard-loader": "0.0.4",
+    "style-loader": "^0.20.1",
+    "webpack": "^1.15.0",
+    "webpack-dashboard": "^1.1.1",
+    "webpack-dev-server": "^1.16.5",
+    "webpack-validator": "^3.0.0",
+    "@kadira/storybook": "^2.21.0"
+  },
+  "dependencies": {
+    "@fdaciuk/ajax": "^2.3.0",
+    "react": "15.1.0",
+    "react-dom": "15.1.0"
+  },
+  "semistandard": {
+    "globals": [
+      "alert"
+    ]
+  }
+}
