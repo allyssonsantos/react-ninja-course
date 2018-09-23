@@ -12,7 +12,7 @@
     "semistandard": "^11.0.0",
     "semistandard-loader": "0.0.4",
     "webpack": "^1.15.0",
-    "webpack-dev-server": "^1.16.5",
+    "webpack-dev-server": "^3.1.8",
     "webpack-validator": "^3.0.0",
     "whacko": "^0.19.1"
   },
