@@ -8,13 +8,16 @@ const App = ({ todos, handleAddTodo }) => (
       <input type="text" name="todo" />
       <button type="submit">Adicionar</button>
     </form>
-    {console.log(todos)}
+
     <ul>
-      <li style={{ textDecoration: 'line-through' }}>Item 1</li>
-      <li>Item 1</li>
-      <li>Item 1</li>
-      <li>Item 1</li>
-      <li>Item 1</li>
+      {todos.map(todo => (
+        <li
+          key={todo.id}
+          style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+        >
+          {todo.text}
+        </li>
+      ))}
     </ul>
 
     <div>

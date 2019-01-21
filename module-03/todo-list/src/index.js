@@ -7,16 +7,15 @@ import reducer from 'reducers/todos';
 import App from './app';
 
 const store = createStore(reducer);
-console.log(store);
 
-const renderApp = (NextApp) => {
+const renderApp = NextApp => {
   render(
     <AppContainer>
       <Provider store={store}>
         <NextApp />
       </Provider>
     </AppContainer>,
-    document.querySelector('[data-js="app"]'),
+    document.querySelector('[data-js="app"]')
   );
 };
 
