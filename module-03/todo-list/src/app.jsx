@@ -29,8 +29,8 @@ const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
   </div>
 );
 
-const mapStateToProps = state => ({
-  todos: state,
+const mapStateToProps = ({ todos }) => ({
+  todos,
 });
 
 const mapDispatchToProps = dispatch => ({

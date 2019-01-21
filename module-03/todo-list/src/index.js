@@ -3,10 +3,14 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from 'reducers/todos';
 import App from './app';
+import reducer from 'reducers';
 
 const store = createStore(reducer);
+
+store.subscribe(() => {
+  console.log('state', store.getState());
+});
 
 const renderApp = NextApp => {
   render(
